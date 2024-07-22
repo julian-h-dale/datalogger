@@ -6,7 +6,7 @@ from typing import Any
 from bson import ObjectId
 
 
-db_client = MongoClient('localhost', 27017)
+db_client = MongoClient('mongo', 27017)
 test_collection = db_client.test_db.test_collection
 weather_collection = db_client.weather.barometric
 
