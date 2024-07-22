@@ -1,0 +1,25 @@
+services:
+  datalogger:
+    build: .
+    ports: 
+      - "8000:8000"
+    networks:
+      - mongo-network
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-network
+  mongo-express:
+    image: mongo-express
+    ports: 
+      - "8081:8081"
+    networks:
+      - mongo-network
+
+
+networks:
+  mongo-network:
+    name: mongo-network
+    external: true
